@@ -7,7 +7,7 @@ class Stack:
     return len(self.stack)
 
   def empty(self):
-    return len(self.stack) == 0
+    return 1 if len(self.stack) == 0 else 0
 
   def push(self, item):
     self.stack.append(item)
@@ -25,6 +25,18 @@ class Stack:
       return - 1
 
      
-num = input()
+num = int(input())
 stack = Stack()
-stack.push(num)
+while num > 0:
+  commandStr = input()
+  command = list(commandStr.split(" "))
+
+  if command[0] == "push": stack.push(int(command[1]))
+  elif command[0] == "pop": print(stack.pop())
+  elif command[0] == "size": print(stack.size())
+  elif command[0] == "empty": print(stack.empty())
+  elif command[0] == "top": print(stack.top())
+
+  num -= 1
+
+
