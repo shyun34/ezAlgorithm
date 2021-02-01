@@ -1,25 +1,30 @@
 # 스택 클래스 생성
 class Stack:
   def __init__(self):
-    self.top = []
+    self.stack = []
     
   def size(self):
-    return len(self.top)
+    return len(self.stack)
 
   def empty(self):
-    return len(self.top) == 0
+    return len(self.stack) == 0
 
   def push(self, item):
-    self.top.append(item)
+    self.stack.append(item)
 
   def pop(self):
     if not self.empty():
-      return self.top.pop(-1)
+      return self.stack.pop(-1)
     else:
       return -1
 
   def top(self):
     if not self.empty():
-      return self[-1]
+      return self.stack[-1]
     else:
-      return -1
+      return - 1
+
+     
+num = input()
+stack = Stack()
+stack.push(num)
