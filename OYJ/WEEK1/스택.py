@@ -1,3 +1,5 @@
+import sys
+
 # 스택 클래스 생성
 class Stack:
   def __init__(self):
@@ -24,12 +26,12 @@ class Stack:
     else:
       return - 1
 
-     
-num = int(input())
+ # 시간초과로 input() ->  sys.stdin.readline()으로 바꿔줌   
+num = int(sys.stdin.readline())
 stack = Stack()
 while num > 0:
-  commandStr = input()
-  command = list(commandStr.split(" "))
+  
+  command = list(sys.stdin.readline().strip().split(" "))
 
   if command[0] == "push": stack.push(int(command[1]))
   elif command[0] == "pop": print(stack.pop())
