@@ -1,78 +1,40 @@
 //
 //  main.cpp
-//  WEEK1_3
-//  No.10828
-//  Created by 장병윤 on 2021/02/02.
+//  WEEK1_2
+//  No.2750
+//  Created by 장병윤 on 2021/01/31.
 //
 
 #include <iostream>
-#include <stack>
-
-int n;
-int m_num;
-
-std::string m;
-std::stack<int> st;
 
 int main(int argc, const char * argv[]) {
+
+    int array[1000];
+    int num, i, j, min, index = 0, tmp;
     
-    std::cin >> n;
+    std::cin >> num;
     
-    for(int i=0; i<n; n++)
+    for(int i=0; i<num; i++)
     {
-        std::cin >> m;
-        
-        if(m == "push")
-        {
-            std::cin >> m_num;
-            st.push(m_num);
-        }
-        else if(m == "pop")
-        {
-            if(!st.empty())
-            {
-                std::cout << st.top();
-                std::cout << '\n';
-                st.pop();
-            }
-            else
-            {
-                std::cout << -1;
-                std::cout << '\n';
-            }
-        }
-        else if(m == "size")
-        {
-            std::cout << st.size();
-            std::cout << '\n';
-        }
-        else if(m == "empty")
-        {
-            if(st.empty())
-            {
-                std::cout << 1;
-                std::cout << '\n';
-            }
-            else
-            {
-                std::cout << 0;
-                std::cout << '\n';
-            }
-        }
-        else if(m == "top")
-        {
-            if(!st.empty())
-            {
-                std::cout << st.top();
-                std::cout << '\n';
-            }
-            else
-            {
-                std::cout << -1;
-                std::cout << '\n';
-            }
-        }
+        std::cin >> array[i];
     }
-    
-    
+    for(i=0; i<num; i++)
+    {
+        min = 1000;
+        for(j = i; j < num; j++)
+        {
+            if(min > array[j])
+            {
+                min = array[j];
+                index = j;
+            }
+        }
+        tmp = array[i];
+        array[i] = array[index];
+        array[index] = tmp;
+    }
+    for(i = 0; i < num; i++)
+    {
+        std::cout << array[i] << '\n';
+    }
 }
