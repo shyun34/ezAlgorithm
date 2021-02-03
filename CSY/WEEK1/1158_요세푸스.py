@@ -1,5 +1,6 @@
 import sys
 from collections import deque
+sys.stdin=open("input.txt","rt")
 
 n,k=map(int,input().split())
 dq=deque()
