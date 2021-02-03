@@ -1,4 +1,5 @@
 import sys
+sys.stdin=open("input.txt","rt")
 
 def push(x):
     stack.append(int(x))
@@ -34,8 +35,4 @@ for _ in range(n):
         print(empty())
     elif a[0]=='top':
         print(top())
-
-
-
-    
 

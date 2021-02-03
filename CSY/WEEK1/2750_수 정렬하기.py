@@ -1,3 +1,6 @@
+import sys
+sys.stdin=open("input.txt","rt")
+
 #bubble sort
 
 n=int(input())
