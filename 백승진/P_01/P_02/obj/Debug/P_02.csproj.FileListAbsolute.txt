@@ -1,0 +1,6 @@
+C:\Users\mame\source\repos\P_01\P_02\obj\Debug\P_02.csproj.CoreCompileInputs.cache
+C:\Users\mame\source\repos\P_01\P_02\bin\Debug\P_02.exe.config
+C:\Users\mame\source\repos\P_01\P_02\bin\Debug\P_02.exe
+C:\Users\mame\source\repos\P_01\P_02\bin\Debug\P_02.pdb
+C:\Users\mame\source\repos\P_01\P_02\obj\Debug\P_02.exe
+C:\Users\mame\source\repos\P_01\P_02\obj\Debug\P_02.pdb

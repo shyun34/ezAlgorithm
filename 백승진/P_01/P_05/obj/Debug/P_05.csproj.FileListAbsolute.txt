@@ -1,0 +1,7 @@
+C:\Users\mame\source\repos\P_01\P_05\bin\Debug\P_05.exe.config
+C:\Users\mame\source\repos\P_01\P_05\bin\Debug\P_05.exe
+C:\Users\mame\source\repos\P_01\P_05\bin\Debug\P_05.pdb
+C:\Users\mame\source\repos\P_01\P_05\obj\Debug\P_05.csproj.CoreCompileInputs.cache
+C:\Users\mame\source\repos\P_01\P_05\obj\Debug\P_05.exe
+C:\Users\mame\source\repos\P_01\P_05\obj\Debug\P_05.pdb
+C:\Users\mame\source\repos\P_01\P_05\obj\Debug\P_05.csprojAssemblyReference.cache

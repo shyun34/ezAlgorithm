@@ -1,0 +1,7 @@
+C:\Users\mame\source\repos\P_01\P_04\obj\Debug\P_04.csprojAssemblyReference.cache
+C:\Users\mame\source\repos\P_01\P_04\obj\Debug\P_04.csproj.CoreCompileInputs.cache
+C:\Users\mame\source\repos\P_01\P_04\bin\Debug\P_04.exe.config
+C:\Users\mame\source\repos\P_01\P_04\bin\Debug\P_04.exe
+C:\Users\mame\source\repos\P_01\P_04\bin\Debug\P_04.pdb
+C:\Users\mame\source\repos\P_01\P_04\obj\Debug\P_04.exe
+C:\Users\mame\source\repos\P_01\P_04\obj\Debug\P_04.pdb
