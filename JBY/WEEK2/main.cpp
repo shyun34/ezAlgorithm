@@ -1,60 +1,57 @@
 //
 //  main.cpp
-//  WEEK2_2
-//  프로그래머스(LV2.스택/큐> 기능개발)
-//  Created by 장병윤 on 2021/02/15.
+//  WEEK2_1
+//  프로그래머스(LV2.최댓값최솟값)
+//  Created by 장병윤 on 2021/02/14.
 //
 
-#include <iostream>
+#include <string>
 #include <vector>
-#include <queue>
-
-/*
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
-}
-*/
+#include <algorithm>
 
 using namespace std;
 
-vector<int> solution(vector<int> progresses, vector<int> speeds) {
-    vector<int> answer;
-    queue<int> q;
-    
-    for(int i=0; i<progresses.size(); i++)
-    {
-        int dayCnt = 0;
-        while(progresses[i] < 100) // 며칠이 걸리는지 계산.
-        {
-            progresses[i] += speeds[i];
-            dayCnt++;
-        }
-        q.push(dayCnt);
-    }
 
-    int cnt = 1;
-    int now = q.front();
-    q.pop();
+bool cal(string a, string b)
+{
+    int numA = stoi(a);
+    int numB = stoi(b);
     
-    
-    while (!q.empty()) { //큐의 맨 앞 값과 현재 값 비교해서 cnt 카운팅.
-        if(q.front() <= now)
+    if(numA <= numB)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}   
+
+
+string solution(string s) {
+    string answer = "";
+    string temp;
+    vector<string> v;
+        
+    for(int i=0; i < s.size(); i++)
+    {
+        if(s[i] == ' ')
         {
-            q.pop();
-            cnt++;
+            v.push_back(temp);
+            temp = "";
+            continue;
         }
         else
         {
-            answer.push_back(cnt);
-            cnt = 1;
-            now = q.front();
-            q.pop();
+            temp += s[i];
         }
     }
     
-    answer.push_back(cnt);
+    v.push_back(temp);
+    
+    sort(v.begin(), v.end(), cal);
+    
+    answer = v[0] + " " + v[v.size()-1];
     
     return answer;
 }
