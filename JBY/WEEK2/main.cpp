@@ -1,33 +1,60 @@
 //
 //  main.cpp
-//  WEEK2_3
-//  프로그래머스(LV2.정렬/H-Index)
-//  Created by 장병윤 on 2021/02/16.
+//  WEEK2_2
+//  프로그래머스(LV2.스택/큐> 기능개발)
+//  Created by 장병윤 on 2021/02/15.
 //
 
 #include <iostream>
 #include <vector>
-#include <string>
-#include <algorithm>
+#include <queue>
+
+/*
+int main(int argc, const char * argv[]) {
+    // insert code here...
+    std::cout << "Hello, World!\n";
+    return 0;
+}
+*/
 
 using namespace std;
 
-int solution(vector<int> citations) {
-    int answer = 0;
+vector<int> solution(vector<int> progresses, vector<int> speeds) {
+    vector<int> answer;
+    queue<int> q;
     
-    sort(citations.begin(), citations.end(), greater<int>());
-    
-    for(int i=0; i<citations.size(); i++)
+    for(int i=0; i<progresses.size(); i++)
     {
-        if(i + 1 <= citations[i])
+        int dayCnt = 0;
+        while(progresses[i] < 100) // 며칠이 걸리는지 계산.
         {
-            answer = i + 1;
+            progresses[i] += speeds[i];
+            dayCnt++;
+        }
+        q.push(dayCnt);
+    }
+
+    int cnt = 1;
+    int now = q.front();
+    q.pop();
+    
+    
+    while (!q.empty()) { //큐의 맨 앞 값과 현재 값 비교해서 cnt 카운팅.
+        if(q.front() <= now)
+        {
+            q.pop();
+            cnt++;
         }
         else
         {
-            break;
+            answer.push_back(cnt);
+            cnt = 1;
+            now = q.front();
+            q.pop();
         }
     }
+    
+    answer.push_back(cnt);
     
     return answer;
 }
