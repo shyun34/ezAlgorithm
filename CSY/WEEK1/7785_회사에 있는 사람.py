@@ -1,3 +1,6 @@
+import sys
+sys.stdin=open("input.txt","rt")
+
 n=int(input())
 a={}
 for i in range(n):

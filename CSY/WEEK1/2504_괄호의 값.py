@@ -1,16 +1,37 @@
-#실패함 ㅠㅠ 도대체 뭐가 틀린거지ㅠㅠ
-#index error
-
-
+import sys
+sys.stdin=open("input.txt","rt")
 
 s=input()
 stack=[]
+ss=[]
 res=0
+
+
+for i in s:
+    if i=='(':
+        ss.append(i)
+    elif i=='[':
+        ss.append(i)
+    elif i==')':
+        if not ss:
+             print(0)
+             exit(0)
+        if ss[-1]=='(':
+            ss.pop()
+    elif i==']':
+        if not ss:
+             print(0)
+             exit(0)
+        if ss[-1]=='[':
+            ss.pop()
+if ss:
+    print(0)
+    exit(0)
 
 for i in s:
     if i==')':
         tmp=0
-        while 1:
+        while stack:
             top = stack.pop()
             if top=='(':
                 if tmp==0:
@@ -26,7 +47,7 @@ for i in s:
                 tmp+=int(top)
     elif i==']':
         tmp=0
-        while 1:
+        while stack:
             top = stack.pop()
             if top=='[':
                 if tmp==0:
@@ -42,6 +63,7 @@ for i in s:
                 tmp+=int(top)
     else:
         stack.append(i)
-while len(stack)!=0:
+while stack:
     res+=stack.pop()
 print(res)
+

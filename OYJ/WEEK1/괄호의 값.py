@@ -4,8 +4,6 @@
 
 # 입력값이 유효한지 체크
 def isValid(input):
-
-  
   if isinstance(input, list):
     bin = []
     if len(input) % 2 != 0: return False
@@ -34,7 +32,7 @@ def getValue(input):
         calc[0] += 1
       elif i == ')':
         val += 2
-        
+
       elif i == ']':
 
   else: val = 0
