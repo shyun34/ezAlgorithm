@@ -17,13 +17,13 @@ function solution(n, computers) { //n=3 ,computers = [[1, 1, 0], [1, 1, 0], [0, 
 
     let networkNodes = [];  //네트워크 노드들
 
-    for (let i = 0; i < n; i++) {
+    for (let i = 0; i < n; i++) { //포문 돌림
        
-        if (networkNodes.length < 1) {
+        if (networkNodes.length < 1) { //하나도없으면 노드추가
 
             networkNodes.push(computers[i]); //노드가 하나도 없으면 추가
 
-        } else {
+        }else {
             let isAllNotConnected = [];
 
             for (let j = 0; j < networkNodes.length; j++) { //노드 수만큼 반복
@@ -58,8 +58,17 @@ function solution(n, computers) { //n=3 ,computers = [[1, 1, 0], [1, 1, 0], [0, 
 
     return answer;
 }
+solution(6, [[1, 0, 1, 1, 0, 0], 
+    [0, 1, 0, 0, 1, 1],
+    [1, 0, 1, 1, 1, 1] ,
+    [1, 0, 1, 1, 1, 1] ,
+    [0, 1, 1, 1, 1, 1] ,
+    [0, 1, 1, 1, 1, 1]
+    ]) ;
 
-solution(5, [[1, 1, 0, 0, 1], [1, 1, 0, 0, 0], [0, 0, 1, 0, 1], [0, 0, 0, 1, 1], [1, 0, 1, 1, 1]]); //1
-solution(4, [[1, 0, 0, 1], [0, 1, 0, 1], [0, 0, 1, 0], [1, 1, 0, 1]]); //2
-solution(4, [[1, 0, 1, 0], [0, 1, 0, 1], [1, 0, 1, 0], [0, 1, 0, 1]]); //2
+
+
+// solution(5, [[1, 1, 0, 0, 1], [1, 1, 0, 0, 0], [0, 0, 1, 0, 1], [0, 0, 0, 1, 1], [1, 0, 1, 1, 1]]); //1
+// solution(4, [[1, 0, 0, 1], [0, 1, 0, 1], [0, 0, 1, 0], [1, 1, 0, 1]]); //2
+// solution(4, [[1, 0, 1, 0], [0, 1, 0, 1], [1, 0, 1, 0], [0, 1, 0, 1]]); //2
 
